@@ -1,19 +1,13 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
+    const year = new Date().getFullYear();
+
     return (
-        <footer style={styles.footer}>
-            <p>© {new Date().getFullYear()} SmartAxis</p>
-            <p style={styles.sub}>Built for sane Sales Orders 🚀</p>
+        <footer className={styles.footer}>
+            <div className={styles.inner}>
+                <p className={styles.text}>© {year} SmartAxis. All rights reserved.</p>
+            </div>
         </footer>
     );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-    footer: {
-        borderTop: "1px solid rgba(0,0,0,0.08)",
-        padding: 18,
-        textAlign: "center",
-        background: "#fff",
-        marginTop: 32,
-    },
-    sub: { fontSize: 12, color: "#666" },
-};

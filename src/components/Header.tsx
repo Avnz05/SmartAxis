@@ -1,45 +1,44 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import styles from "./Header.module.css";
 
 export default function Header() {
     return (
-        <header style={styles.header}>
-            <div style={styles.inner}>
-                <Link to="/" style={styles.brand}>
+        <header className={styles.header}>
+            <div className={styles.inner}>
+                <NavLink to="/" className={styles.brand}>
                     SmartAxis
-                </Link>
+                </NavLink>
 
-                <nav style={styles.nav}>
-                    <a href="#features" style={styles.link}>Features</a>
-                    <a href="#about" style={styles.link}>About</a>
-                    <a href="#contact" style={styles.link}>Contact</a>
+                <nav className={styles.nav}>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            `${styles.link} ${isActive ? styles.active : ""}`
+                        }
+                        end
+                    >
+                        Home
+                    </NavLink>
+
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) =>
+                            `${styles.link} ${isActive ? styles.active : ""}`
+                        }
+                    >
+                        About
+                    </NavLink>
+
+                    <NavLink
+                        to="/contact"
+                        className={({ isActive }) =>
+                            `${styles.link} ${isActive ? styles.active : ""}`
+                        }
+                    >
+                        Contact
+                    </NavLink>
                 </nav>
             </div>
         </header>
     );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-    header: {
-        position: "sticky",
-        top: 0,
-        background: "#fff",
-        borderBottom: "1px solid rgba(0,0,0,0.08)",
-        zIndex: 10,
-    },
-    inner: {
-        maxWidth: 1100,
-        margin: "0 auto",
-        padding: "14px 18px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    brand: {
-        textDecoration: "none",
-        fontWeight: 800,
-        fontSize: 18,
-        color: "#111",
-    },
-    nav: { display: "flex", gap: 14 },
-    link: { textDecoration: "none", color: "#333", fontSize: 14 },
-};
