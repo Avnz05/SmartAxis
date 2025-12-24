@@ -4,7 +4,7 @@ import Footer from "../components/Footer.tsx";
 export default function LandingPage() {
     return (
         <>
-            <Header />
+
 
             <main style={styles.main}>
                 <h1>Sales Orders, minus the chaos.</h1>
@@ -21,7 +21,7 @@ export default function LandingPage() {
                 </button>
             </main>
 
-            <Footer />
+
         </>
     );
 }
