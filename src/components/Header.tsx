@@ -18,35 +18,28 @@ export default function Header() {
     );
 }
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
     header: {
         position: "sticky",
         top: 0,
-        zIndex: 10,
-        background: "#ffffff",
+        background: "#fff",
         borderBottom: "1px solid rgba(0,0,0,0.08)",
+        zIndex: 10,
     },
     inner: {
         maxWidth: 1100,
         margin: "0 auto",
         padding: "14px 18px",
         display: "flex",
-        alignItems: "center",
         justifyContent: "space-between",
-        gap: 16,
+        alignItems: "center",
     },
     brand: {
         textDecoration: "none",
-        color: "#111",
         fontWeight: 800,
-        letterSpacing: 0.2,
         fontSize: 18,
+        color: "#111",
     },
-    nav: { display: "flex", gap: 14, alignItems: "center" },
-    link: {
-        color: "#333",
-        textDecoration: "none",
-        fontSize: 14,
-        opacity: 0.9,
-    },
+    nav: { display: "flex", gap: 14 },
+    link: { textDecoration: "none", color: "#333", fontSize: 14 },
 };

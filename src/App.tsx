@@ -1,13 +1,10 @@
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 
-function App() {
+export default function App() {
   return (
-    <main className="app">
-      <h1>Welcome to SmartAxis</h1>
-      <p>Your new frontend project is ready to build.</p>
-      <p>Start by editing <code>src/App.tsx</code> to customize this page.</p>
-    </main>
-  )
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+    </Routes>
+  );
 }
-
-export default App
